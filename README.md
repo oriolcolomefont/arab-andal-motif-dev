@@ -15,11 +15,67 @@ This repository contains the original code and analysis for exploring motif deve
 - `notebook.ipynb`: Main analysis notebook
 
 ## Setup Instructions
-1. Clone this repository
-2. Install required dependencies:
+
+### Basic Setup
+1. Clone this repository:
 ```bash
-pip install numpy matplotlib music21 pandas
+git clone https://github.com/yourusername/arab-andal-motif-dev.git
+cd arab-andal-motif-dev
 ```
+
+2. Create and activate a virtual environment (recommended):
+```bash
+# Using venv (Python 3.8 or higher recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install all dependencies:
+```bash
+# Install all required packages
+pip install -r requirements.txt
+```
+
+### Development Setup
+For development work, additional tools are automatically configured for code quality:
+
+1. Install pre-commit hooks:
+```bash
+pre-commit install
+```
+
+2. The following quality checks will run automatically on commit:
+   - Code formatting (black)
+   - Import sorting (isort)
+   - Linting (flake8)
+   - Type checking (mypy)
+   - Basic file checks (trailing whitespace, YAML validity)
+
+3. Run quality checks manually:
+```bash
+# Run all pre-commit hooks
+pre-commit run --all-files
+
+# Run tests with coverage
+pytest tests/ --cov=src/ --cov-report=term-missing
+
+# Format code
+black src tests examples
+```
+
+### Configuration Files
+- `requirements.txt`: Python package dependencies
+- `setup.cfg`: Configuration for pytest, flake8, mypy, and other tools
+- `.pre-commit-config.yaml`: Pre-commit hooks configuration
+- `.github/workflows/tests.yml`: CI pipeline configuration
+
+### IDE Integration
+For the best development experience:
+1. Configure your IDE to use the project's virtual environment
+2. Enable format-on-save with black (line length: 88)
+3. Enable import sorting with isort
+4. Enable flake8 linting
+5. Enable mypy type checking
 
 ## Usage
 1. Open `notebook.ipynb` in Jupyter Notebook or JupyterLab
