@@ -24,8 +24,10 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        # Install all dependencies including development ones
         pip install -r requirements.txt
-        pip install pytest pytest-cov
+        # Install additional development tools
+        pip install black isort flake8 flake8-docstrings mypy pytest pytest-cov types-all
     
     - name: Check code formatting with black
       run: |
@@ -37,11 +39,11 @@ jobs:
         
     - name: Lint with flake8
       run: |
-        flake8 src tests examples --count --show-source --statistics
+        flake8 src tests examples --count --show-source --statistics --config=setup.cfg
         
     - name: Type checking with mypy
       run: |
-        mypy src tests examples
+        mypy src tests examples --config-file=setup.cfg
     
     - name: Run tests with pytest
       run: |
