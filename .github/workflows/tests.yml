@@ -26,8 +26,9 @@ jobs:
         python -m pip install --upgrade pip
         # Install all dependencies including development ones
         pip install -r requirements.txt
-        # Install additional development tools
-        pip install black isort flake8 flake8-docstrings mypy pytest pytest-cov types-all
+        # Install development tools and type stubs
+        pip install black isort flake8 flake8-docstrings mypy pytest pytest-cov
+        pip install types-setuptools types-PyYAML types-requests types-python-dateutil
     
     - name: Check code formatting with black
       run: |
