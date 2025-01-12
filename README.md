@@ -93,6 +93,13 @@ The analysis pipeline includes:
 ## Results
 The plots and annotated scores demonstrate the systematic development of motifs across different pieces in the ṭab' Iraq-al-ayam tradition. Refer to the research paper for detailed interpretation of results.
 
+### Example Visualization
+Below is an example of motif analysis in Quddam Iraq-Ajam Lasamir:
+
+![Motif Analysis in Quddam Iraq-Ajam Lasamir](plots/Quddam_Iraq_Ajam_Lasamir.png)
+
+This visualization shows the identified motifs and their development throughout the piece.
+
 ## Contact
 For questions or collaborations, please contact:
 - Oriol Colomé i Font: oriol.colome01@estudiant.upf.edu
